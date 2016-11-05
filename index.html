@@ -65,7 +65,7 @@
             } else {result = text}
             if (result && result.indexOf("@youtube") > -1) {
                 sendNotification("Event received!");
-                return result.replace("@youtube", "");
+                return result.replace("@youtube ", "");
             }
 
 else if (result && result.indexOf("@filetransfer") > -1) {
