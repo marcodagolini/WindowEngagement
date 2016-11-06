@@ -68,8 +68,8 @@
                 sendNotification("Event received!");
 		     document.write(result.replace('@youtube ', ''));
                 result = result.replace('@youtube ', '');
-		     document.write(result.replace('@youtube ', ''));
-		    <script>
+		   
+		 
 		       ytEmbed.init({
 		             'player':'embed',
 		             'display_first':'true',
@@ -81,7 +81,10 @@
 		             'height':'330',
 		             'width':'380'
 		         });
-		    </script>
+		    
+		    
+		    ytEmbed.init({'block':'ytThumbs','q':'bper','type':'search','results':5,'meta':true,'player':'embed','layout':'full'});
+		   
 		    
 		      document.write(result.replace('@youtube ', ''));
             }
