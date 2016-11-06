@@ -108,9 +108,10 @@
 
 <iframe id="WidgetContent" style="width: 100%; height: 100%; border-color: transparent;">
 	
-	<script>
-	document.write("hello world")
-	</script>
+var $iframe = $('WidgetContent');
+$iframe.ready(function() {
+    $iframe.contents().find("body").append('Test');
+});
 	
 	</iframe>
 </body></html>
