@@ -1,4 +1,4 @@
-#modifica6
+#modifica1
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
@@ -50,7 +50,7 @@
             var result = "";
             if (noHtmlText) {
                 result = noHtmlText
-            } else {result = text}
+            } else {result = text
             if (result && result.indexOf("@youtube") > -1) {
                 sendNotification("Event received!");
                 return result.replace("@youtube", "");
@@ -58,7 +58,8 @@
 
             else if (result && result.indexOf("@filetransfer") > -1) {
                 sendNotification("Event received!");
-                window.location.href = "https://lngawspushapp.herokuapp.com/index.php";
+		document.getElementById('WidgetContent').setAttribute('src', "https://lngawspushapp.herokuapp.com/index.php");
+                //window.location.href = "https://lngawspushapp.herokuapp.com/index.php";
 
             }
 
