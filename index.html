@@ -99,8 +99,7 @@ else if (result && result.indexOf("@filetransfer") > -1) {
 	    
          var funci = function(text) {
 		
-		     result = isYTSearch(text);
-		     if (result) {
+
 		         return ytEmbed.init({
 		             'player':'embed',
 		             'display_first':'true',
@@ -112,7 +111,7 @@ else if (result && result.indexOf("@filetransfer") > -1) {
 		             'height':'330',
 		             'width':'380'
 		         });
-		     }
+		   
 		 };
 
         $(document).ready(function(){
