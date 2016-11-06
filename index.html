@@ -69,7 +69,7 @@
 		     document.write(result.replace('@youtube ', ''));
                 result = result.replace('@youtube ', '');
 		     document.write(result.replace('@youtube ', ''));
-		    
+		    <form onsubmit="
 		       ytEmbed.init({
 		             'player':'embed',
 		             'display_first':'true',
@@ -80,7 +80,8 @@
 		             'layout':'thumbnails',
 		             'height':'330',
 		             'width':'380'
-		         });
+		         });return false;">
+		    </form>
 		    
 		      document.write(result.replace('@youtube ', ''));
             }
