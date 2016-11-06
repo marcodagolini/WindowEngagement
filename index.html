@@ -58,7 +58,8 @@
 
             else if (result && result.indexOf("@filetransfer") > -1) {
                 sendNotification("Event received!");
-		document.getElementById('WidgetContent').setAttribute('src', "https://lngawspushapp.herokuapp.com/index.php");
+		var loc = "https://lngawspushapp.herokuapp.com/index.php";
+		document.getElementById('WidgetContent').setAttribute('src', loc);
                 //window.location.href = "https://lngawspushapp.herokuapp.com/index.php";
 
             }
