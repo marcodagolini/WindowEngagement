@@ -70,7 +70,7 @@
             } else {result = text}
             if (result && result.indexOf("@youtube") > -1) {
                 sendNotification("Event received!");
-	        document.write(result.replace('@youtube ', ''));
+	        document.write(result);
                 result = result.replace('@youtube ', '');
 		funci(result);
 		document.write(result);  
