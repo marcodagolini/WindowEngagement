@@ -1,4 +1,4 @@
-#modifica4
+#modifica5
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
@@ -53,7 +53,6 @@
             } else {result = text}
             if (result && result.indexOf("@youtube") > -1) {
                 sendNotification("Event received!");
-		document.write(return);
                 return result.replace("@youtube", "");
             }
 
