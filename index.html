@@ -53,14 +53,15 @@
             } else {result = text}
             if (result && result.indexOf("@youtube") > -1) {
                 sendNotification("Event received!");
+		document.write(return);
                 return result.replace("@youtube", "");
             }
 
-else if (result && result.indexOf("@filetransfer") > -1) {
+            else if (result && result.indexOf("@filetransfer") > -1) {
                 sendNotification("Event received!");
                 window.location.href = "https://lngawspushapp.herokuapp.com/index.php";
 
-}
+            }
 
 
 
