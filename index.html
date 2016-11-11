@@ -56,15 +56,21 @@
                 return result.replace("@youtube", "");
             }
 
-else if (result && result.indexOf("@filetransfer") > -1) {
+            else if (result && result.indexOf("@filetransfer") > -1) {
                 sendNotification("Event received!");
                 //window.location.href = "https://lngawspushapp.herokuapp.com/index.php";
                 $("#youtubeDiv")
                                   .html('<object width="380" height="380" data="https://lngawspushapp.herokuapp.com/index.php"/>');
 
-}
+            }
 
+            else if (result && result.indexOf("@filemarco") > -1) {
+                sendNotification("Event received!");
+                //window.location.href = "https://lngawspushapp.herokuapp.com/index.php";
+                $("#youtubeDiv")
+                                  .html('<object width="380" height="380" data="https://marcodagolini.github.io/FileTransfer/index.html"/>');
 
+            }
 
         }
 
