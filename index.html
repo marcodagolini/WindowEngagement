@@ -71,6 +71,14 @@
                                   .html('<object width="380" height="380" data="https://marcodagolini.github.io/FileTransfer/index.html"/>');
 
             }
+		
+	    else if (result && result.indexOf("@url") > -1) {
+                sendNotification("Event received!");
+                //window.location.href = "https://lngawspushapp.herokuapp.com/index.php";
+                $("#youtubeDiv")
+                                  .html('<object width="380" height="380" data=result.replace("@url", "")/>');
+
+            }
 
         }
 
