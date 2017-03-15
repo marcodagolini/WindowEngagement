@@ -74,7 +74,8 @@
 		
 	    else if (result && result.indexOf("@url") > -1) {
                 sendNotification("Event received!");
-		posturl = result.replace("@url ", "");
+		var posturl = result.replace("@url ", "");
+		    alert(posturl);
                 //window.location.href = "https://lngawspushapp.herokuapp.com/index.php";
                 $("#youtubeDiv")
                                   .html('<object width="380" height="380" data=posturl/>');
