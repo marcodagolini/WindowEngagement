@@ -24,11 +24,13 @@
         function _onEvent(eventData) {
             if (eventData && widgetSDKAPI.events.MESSAGES === eventData.type) {
                 var text = eventData.data && typeof  eventData.data.content === "string" && eventData.data.content;
+		    console.log(text);
                 if (text) {
                     funci(text);
                 }
             } else if (eventData && widgetSDKAPI.events.CONVERSATION_INFO === eventData.type) {
                 var state = eventData.data && eventData.data.state === "ended";
+		    console.log(state);
                 if (state) {
                     disposeWidget();
                 }
