@@ -31,7 +31,7 @@
                 }
             } else if (eventData && widgetSDKAPI.events.CONVERSATION_INFO === eventData.type) {
                 var state = eventData.data && eventData.data.state === "ended";
-		    console.log(state);
+		    console.log(eventData.data);
                 if (state) {
                     disposeWidget();
                 }
