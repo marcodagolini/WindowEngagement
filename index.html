@@ -78,6 +78,11 @@
 	    else if (result && result.indexOf("@url") > -1) {
                 sendNotification("Event received!");
 		var posturl = result.replace("@url ", "");
+		if (posturl.indexOf("?") > 1){
+			posturl = posturl + "lpTag=false";
+		} else{
+			posturl = posturl + "?lpTag=false";
+		}
                
                 $("#youtubeDiv")
                                   .html('<object width="380" height="380" data="' + posturl + '"/>');
