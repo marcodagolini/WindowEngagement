@@ -27,6 +27,7 @@
             if (eventData && widgetSDKAPI.events.MESSAGES === eventData.type) {
                 var text = eventData.data && typeof  eventData.data.content === "string" && eventData.data.content;
 		    console.log(JSON.stringify(eventData));
+		    console.log(text);
                 if (text) {
                     funci(text);
                 }
