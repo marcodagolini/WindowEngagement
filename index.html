@@ -5,32 +5,24 @@
     <script src="https://lpcdn.lpsnmedia.net/unifiedwindow/widgetSDK.min.js"></script>
     <script src="https://marcodagolini.github.io/youtubeKey/index.js"></script>
     <script type="application/javascript">
-   
+	
     
         var lpWidgetSDK,
         widgetSDKAPI = lpTag.LPWidgetSDK.API;
         window.addEventListener("load", function () {
             var bindingEvent = [widgetSDKAPI.events.CONVERSATION_INFO, widgetSDKAPI.events.MESSAGES],
                     opts = {bind: {}};
-
             bindingEvent.forEach(function (eventName) {
                 opts.bind[eventName] = {func: _onEvent, context: this};
             });
-
             lpWidgetSDK = lpTag.LPWidgetSDK.init(opts);
         }.bind(this));
-
-
         function _onEvent(eventData) {
             if (eventData && widgetSDKAPI.events.MESSAGES === eventData.type) {
                 var text = eventData.data && typeof  eventData.data.content === "string" && eventData.data.content;
-		    // console.log(JSON.stringify(eventData));
 		    console.log(text);
                 if (text) {
-			// if(eventData.data.ts > (Date.now() - 600000)){
-			   funci(text);
-			// }
-                    
+                    funci(text);
                 }
             } else if (eventData && widgetSDKAPI.events.CONVERSATION_INFO === eventData.type) {
                 var state = eventData.data && eventData.data.state === "ended";
@@ -40,14 +32,11 @@
                 }
             }
         }
-
         function disposeWidget() {
             lpWidgetSDK.dispose(function (data) {
                 console.log("widget has been disposed");
             });
         }
-
-
        
         function isYTSearch(text) {
             var div = document.createElement("div");
@@ -61,21 +50,17 @@
                 sendNotification("Event received!");
                 return result.replace("@youtube", "");
             }
-
             else if (result && result.indexOf("@filetransfer") > -1) {
                 sendNotification("Event received!");
                 //window.location.href = "https://lngawspushapp.herokuapp.com/index.php";
                 $("#youtubeDiv")
                                   .html('<object width="380" height="380" data="https://lngawspushapp.herokuapp.com/index.php"/>');
-
             }
-
             else if (result && result.indexOf("@filemarco") > -1) {
                 sendNotification("Event received!");
                 
                 $("#youtubeDiv")
                                   .html('<object width="380" height="380" data="https://marcodagolini.github.io/FileTransfer/index.html"/>');
-
             }
 		
 	    else if (result && result.indexOf("@url") > -1) {
@@ -89,11 +74,8 @@
                
                 $("#youtubeDiv")
                                   .html('<object width="380" height="380" data="' + posturl + '"/>');
-
             }
-
         }
-
         function sendNotification(text) {
             if (typeof text === "string") {
 		    console.log("testo");
@@ -104,7 +86,6 @@
                 });
             }
         }
-
          var funci = function(text) {
 		     result = isYTSearch(text);
 		     if (result) {
@@ -121,13 +102,9 @@
 		         });
 		     }
 		 };
-
         $(document).ready(function(){
             funci();
         });
-
-
-
     </script>
 
 </head>
@@ -140,4 +117,3 @@
 <div id="youtubeDiv" style="height:330;width:380"></div>
 
 </body></html>
-
