@@ -28,7 +28,7 @@
                 var text = eventData.data && typeof  eventData.data.content === "string" && eventData.data.content;
 		    console.log(JSON.stringify(eventData));
 		    console.log(text);
-                if (text) {
+                if (text && (eventData.data.ts > (Date.now() - 600000))) {
                     funci(text);
                 }
             } else if (eventData && widgetSDKAPI.events.CONVERSATION_INFO === eventData.type) {
