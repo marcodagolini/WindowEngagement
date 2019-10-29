@@ -23,7 +23,10 @@
                 var text = eventData.data && typeof  eventData.data.content === "string" && eventData.data.content;
 		    console.log(text);
                 if (text) {
-                    funci(text);
+			if(eventData.data.ts > (Date.now() - 600000)){
+				funci(text);
+			}
+                    
                 }
             } else if (eventData && widgetSDKAPI.events.CONVERSATION_INFO === eventData.type) {
                 var state = eventData.data && eventData.data.state === "ended";
