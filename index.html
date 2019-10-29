@@ -93,7 +93,7 @@
 
         function sendNotification(text) {
             if (typeof text === "string") {
-                lpWidgetSDK.notify({content: text}, function (err) {
+                lpWidgetSDK.notify(text, function (err) {
                     if (err) {
                         console.log("Error on sending notification from widget");
                     }
