@@ -20,7 +20,7 @@
             lpWidgetSDK = lpTag.LPWidgetSDK.init(opts);
         }.bind(this));
         function _onEvent(eventData) {
-	    console.log(JSON.stringify(eventData));
+	    // console.log(JSON.stringify(eventData));
             if (eventData && widgetSDKAPI.events.MESSAGES === eventData.type) {
                 var text = eventData.data && typeof  eventData.data.content === "string" && eventData.data.content;
 		    // console.log(text);
