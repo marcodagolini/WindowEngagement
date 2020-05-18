@@ -2,7 +2,7 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script id="LPSNsdk" src="https://lpcdn.lpsnmedia.net/unifiedwindow/widgetSDK.min.js"></script>
+    <script src="https://lpcdn.lpsnmedia.net/unifiedwindow/widgetSDK.min.js"></script>
     <script src="https://marcodagolini.github.io/youtubeKey/index.js"></script>
 	  
 
@@ -11,7 +11,7 @@
 	  
 	  <script>
 		  
-		  function startMonitor(){
+		  $(document).ready(function() {
 			  console.log("widgetSDK init");
 			  var lpWidgetSDK;
 		  var widgetSDKAPI = lpTag.LPWidgetSDK.API
@@ -33,17 +33,9 @@
 				  console.log("Event data: " + eventData);
 			  }
 		  }
-		  }
-		  
-		  
-		  var script = document.querySelector('#LPSNsdk');
-		  script.addEventListener('load', function() {
-			  startMonitor(); 
 		  });
 		  
-		  
-		  
-		  
+  
 		  
 		  
 	  </script>
