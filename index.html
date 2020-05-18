@@ -2,7 +2,7 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script async=false src="https://lpcdn.lpsnmedia.net/unifiedwindow/widgetSDK.min.js"></script>
+    <script id="LPSNsdk" src="https://lpcdn.lpsnmedia.net/unifiedwindow/widgetSDK.min.js"></script>
     <script src="https://marcodagolini.github.io/youtubeKey/index.js"></script>
 	  
 
@@ -10,9 +10,9 @@
 	  
 	  <script>
 		  
-		  
-		  console.log("widgetSDK init");
-		  var lpWidgetSDK;
+		  function startMonitor(){
+			  console.log("widgetSDK init");
+			  var lpWidgetSDK;
 		  var widgetSDKAPI = lpTag.LPWidgetSDK.API
 		  var opts = {bind: {}}
 		  var bindingEvent = [widgetSDKAPI.events.CONVERSATION_INFO,
@@ -32,6 +32,13 @@
 				  console.log("Event data: " + eventData);
 			  }
 		  }
+		  }
+		  
+		  
+		  var script = document.querySelector('#LPSNsdk');
+		  script.addEventListener('load', function() {
+			  startMonitor(); 
+		  });
 		  
 		  
 		  
