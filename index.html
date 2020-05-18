@@ -1,10 +1,47 @@
 
 <html>
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://lpcdn.lpsnmedia.net/unifiedwindow/widgetSDK.min.js"></script>
     <script src="https://marcodagolini.github.io/youtubeKey/index.js"></script>
+	  
+	  
+	  <script>
+		  
+		  
+  
+var lpWidgetSDK,
+   widgetSDKAPI = lpTag.LPWidgetSDK.API
+   opts = {bind: {}},
+   bindingEvent = [widgetSDKAPI.events.CONVERSATION_INFO, widgetSDKAPI.events.MESSAGES];
+   bindingEvent.forEach(function (eventName) {
+   opts.bind[eventName] = {func: _onEvent, context: this};
+   });
+
+ lpWidgetSDK = lpTag.LPWidgetSDK.init(opts);
+
+function _onEvent(eventData) {
+  if (typeof eventData === "object") {
+    console.log("Event id: " + eventData.id);
+    console.log("Event type: " + eventData.type);
+    console.log("Event data: " + eventData.data);
+  
+}
+		  
+		  
+		  
+		  
+		  
+		  
+	  </script>
+	  
+	  
+	  
     <script type="application/javascript">
+	    
+	    
+	    
+	    /********
 	
 
 	   
@@ -113,6 +150,15 @@
         $(document).ready(function(){
             funci();
         });
+	
+	
+	
+	
+	
+	
+	********/
+	    
+	    
     </script>
 
 </head>
