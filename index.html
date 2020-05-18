@@ -18,7 +18,11 @@
 var lpWidgetSDK,
    widgetSDKAPI = lpTag.LPWidgetSDK.API
    opts = {bind: {}},
-   bindingEvent = [widgetSDKAPI.events.CONVERSATION_INFO, widgetSDKAPI.events.MESSAGES];
+   bindingEvent = [widgetSDKAPI.events.CONVERSATION_INFO,
+		   widgetSDKAPI.events.MESSAGES,
+		   widgetSDKAPI.events.PARTICIPANTS,
+		   widgetSDKAPI.events.UI_WIDGET,
+		   widgetSDKAPI.events.UI_WINDOW];
    bindingEvent.forEach(function (eventName) {
    opts.bind[eventName] = {func: _onEvent, context: this};
    });
