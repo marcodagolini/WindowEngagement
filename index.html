@@ -57,7 +57,7 @@
 					  var text = eventData.data && typeof  eventData.data.content === "string" && eventData.data.content;
 					  
 					  if (text) {
-						  if(eventData.data.ts > (Date.now() - 600000)){
+						  if(eventData.data.ts > (Date.now() - 60000)){
 							  if (text && text.indexOf("@url") > -1) {
 								  var posturl = text.replace("@url ", "");
 								  if (posturl.indexOf("?") > 1){
