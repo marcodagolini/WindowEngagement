@@ -57,10 +57,22 @@
 				  
 				  if (eventData && widgetSDKAPI.events.MESSAGES === eventData.type) {
 					  var text = eventData.data && typeof  eventData.data.content === "string" && eventData.data.content;
-					  sendNotification("ciao");
+					  
 					  if (text) {
 						  if(eventData.data.ts > (Date.now() - 600000)){
-							  // funci(text);
+							  if (text && text.indexOf("@url") > -1) {
+								  sendNotification("Event received!");
+								  var posturl = text.replace("@url ", "");
+								  if (posturl.indexOf("?") > 1){
+									  posturl = posturl + "lpTag=false";
+								  } else{
+									  posturl = posturl + "?lpTag=false";
+								  }
+								  $("#youtubeDiv").html('<object width="380" height="380" data="' + posturl + '"/>');
+								  sendNotification("url arrived!");
+							  }
+
+							  
 						  }
 					  }
 				  } else if (eventData && widgetSDKAPI.events.CONVERSATION_INFO === eventData.type) {
