@@ -12,6 +12,8 @@
 	  
 	  <script>
 		  
+		  
+		  
 
 		  
 		  $(document).ready(function() {
@@ -31,12 +33,45 @@
 			  console.log(opts);
 			  
 			  lpWidgetSDK = window.lpTag.LPWidgetSDK.init(opts);
-			  function _onEvent(eventData) {
-				  if (typeof eventData === "object") {
-					  console.log("Event data: " + JSON.stringify(eventData));
-				  } else{
-					  console.log("Event data: " + eventData);
+			  
+			  function disposeWidget() {
+				  lpWidgetSDK.dispose(function (data) {
+					  console.log("widget has been disposed");
+				  });
+			  }
+			  
+			  
+			  function sendNotification(text) {
+				  if (typeof text === "string") {
+					  console.log("testo");
+					  lpWidgetSDK.notify(text, function (err) {
+						  if (err) {
+							  console.log("Error on sending notification from widget");
+						  }
+					  });
 				  }
+			  }
+			  
+			  
+			  
+			  
+			  function _onEvent(eventData) {
+				  
+				  if (eventData && widgetSDKAPI.events.MESSAGES === eventData.type) {
+					  var text = eventData.data && typeof  eventData.data.content === "string" && eventData.data.content;
+					  sendNotification("ciao");
+					  if (text) {
+						  if(eventData.data.ts > (Date.now() - 600000)){
+							  // funci(text);
+						  }
+					  }
+				  } else if (eventData && widgetSDKAPI.events.CONVERSATION_INFO === eventData.type) {
+					  var state = eventData.data && eventData.data.state === "ended";
+					  if (state) {
+						  disposeWidget();
+					  }
+				  }
+				  
 			  }
 		  });
 		  
