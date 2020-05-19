@@ -61,7 +61,6 @@
 					  if (text) {
 						  if(eventData.data.ts > (Date.now() - 600000)){
 							  if (text && text.indexOf("@url") > -1) {
-								  sendNotification("Event received!");
 								  var posturl = text.replace("@url ", "");
 								  if (posturl.indexOf("?") > 1){
 									  posturl = posturl + "lpTag=false";
@@ -69,7 +68,7 @@
 									  posturl = posturl + "?lpTag=false";
 								  }
 								  $("#youtubeDiv").html('<object width="380" height="380" data="' + posturl + '"/>');
-								  sendNotification("url arrived!");
+								  sendNotification("url checked!");
 							  }
 
 							  
