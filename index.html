@@ -52,6 +52,11 @@
 			  
 			  function _onEvent(eventData) {
 				  
+				  sendNotification("event checked!");
+				  console.log("checked");
+				  
+				  /******
+				  
 				  if (eventData && widgetSDKAPI.events.MESSAGES === eventData.type) {
 					  var text = eventData.data && typeof  eventData.data.content === "string" && eventData.data.content;
 					  
@@ -78,6 +83,8 @@
 						  disposeWidget();
 					  }
 				  }
+				  
+				  ****/
 				  
 			  }
 		  });
