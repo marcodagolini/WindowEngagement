@@ -63,6 +63,8 @@
 								  } else{
 									  posturl = posturl + "?lpTag=false";
 								  }
+								  console.log("event");
+								  console.log(JSON.stringify(eventData));
 								  $("#youtubeDiv").html('<object width="380" height="380" data="' + posturl + '"/>');
 								  // sendNotification("url checked!");
 								  disposeWidget();
