@@ -34,10 +34,15 @@
 			  
 			  lpWidgetSDK = window.lpTag.LPWidgetSDK.init(opts);
 			  
-			  lpWidgetSDK.dispose(function (data) {
-					  console.log(JSON.stringify(data));
-					  
-				  });
+			  function disposeCallback(err) {
+    if (err) {
+        console.log("Error on widget disposal");
+    }
+  }
+			  
+			  lpWidgetSDK.dispose(disposeCallback);
+
+  
 			  
 			  function disposeWidget() {
 				  console.log("dispose or not?");
