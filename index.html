@@ -57,6 +57,8 @@
 			  
 			  
 			  function _onEvent(eventData) {
+				  
+				  console.log("eventData --> " + JSON.stringify(eventData));
 
 				  
 				  if (eventData && widgetSDKAPI.events.MESSAGES === eventData.type) {
