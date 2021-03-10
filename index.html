@@ -33,6 +33,7 @@
 			  lpWidgetSDK = window.lpTag.LPWidgetSDK.init(opts);
 			  
 			  lpWidgetSDK.dispose(function (data, err) {
+				  console.log("widget has been disposed");
 					  if (err){
 						  console.log(err);
 					  } else{
