@@ -10,12 +10,12 @@
 	  
 	  <script>
 		  
-		  var lpWidgetSDK;
+		  
 	
 		  
 		  $(document).ready(function() {
 			  console.log("widgetSDK init");
-			  
+			  var lpWidgetSDK;
 			  var widgetSDKAPI = window.lpTag.LPWidgetSDK.API
 			  var opts = {bind: {}}
 			  var bindingEvent = [widgetSDKAPI.events.CONVERSATION_INFO,
@@ -80,7 +80,7 @@
 								  console.log(JSON.stringify(eventData));
 								  $("#youtubeDiv").html('<object width="380" height="auto" data="' + posturl + '"/>');
 								  sendNotification("url checked!");
-								  disposeWidget();
+								  // disposeWidget();
 							  }
 
 							  
