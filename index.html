@@ -70,13 +70,13 @@
 							  if (text && text.indexOf("@url") > -1) {
 								  var posturl = text.replace("@url ", "");
 								  if (posturl.indexOf("?") > 1){
-									  posturl = posturl + "lpTag=false";
+									  posturl = posturl + "&lpTag=false";
 								  } else{
 									  posturl = posturl + "?lpTag=false";
 								  }
 								  console.log("event");
 								  console.log(JSON.stringify(eventData));
-								  $("#youtubeDiv").html('<object width="380" height="380" data="' + posturl + '"/>');
+								  $("#youtubeDiv").html('<object width="380" height="auto" data="' + posturl + '"/>');
 								  sendNotification("url checked!");
 								  // disposeWidget();
 							  }
