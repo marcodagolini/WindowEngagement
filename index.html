@@ -8,11 +8,13 @@
 	  
 	  
 	  <script>
+		  
+		  var lpWidgetSDK;
 	
 		  
 		  $(document).ready(function() {
 			  console.log("widgetSDK init");
-			  var lpWidgetSDK;
+			  
 			  var widgetSDKAPI = window.lpTag.LPWidgetSDK.API
 			  var opts = {bind: {}}
 			  var bindingEvent = [widgetSDKAPI.events.CONVERSATION_INFO,
@@ -29,7 +31,7 @@
 			  
 			  lpWidgetSDK = window.lpTag.LPWidgetSDK.init(opts);
 			  
-			  function disposeWidget(lpWidgetSDK) {
+			  function disposeWidget() {
 				  console.log("dispose or not?");
 				  lpWidgetSDK.dispose(function (data, err) {
 					  if (err){
