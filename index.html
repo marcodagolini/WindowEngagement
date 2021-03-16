@@ -36,9 +36,10 @@
 			  
 			  function disposeWidget() {
 				  console.log("dispose or not?");
-				  lpWidgetSDK.dispose(function (data) {
-					  console.log(JSON.stringify(data));
-					  
+				  lpWidgetSDK.dispose(function (err) {
+					  if (err) {
+						  console.log("Error on disposing widget");
+					  }
 				  });
 			  }
 			  
@@ -77,7 +78,7 @@
 								  console.log("event");
 								  console.log(JSON.stringify(eventData));
 								  $("#youtubeDiv").html('<object width="380" height="auto" data="' + posturl + '"/>');
-								  // sendNotification("url checked!");
+								  sendNotification("url checked!");
 								  disposeWidget();
 							  }
 
